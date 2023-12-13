@@ -1,0 +1,67 @@
+/* AuthPages.css */
+.auth-container {
+    max-width: 400px;
+    margin: 5% auto;
+    /* margin-left: 200px; */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #ccc;
+  }
+  
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+  font-weight: bold;
+  margin-left: 30px;
+  text-align: left;
+   
+    
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  button {
+    width: 88%;
+    padding: 10px;
+    border-radius: 9px;
+    border: 1px solid #ccc;
+  }
+  
+  .btn {
+    background-color:#7B62E4;
+    width: 90%;
+    color: white;
+    cursor: pointer;
+
+  }
+  
+  .btn:hover {
+    background-color: rgb(7, 7, 7);
+  }
+  
+
+  .signinbtn{
+    background-color:#121212;
+    width: 90%;
+    color: white;
+    cursor: pointer;
+  }
+  
+  body {
+    text-align: center;
+    /* padding-top: 2rem; */
+    
+  }
+
+  
