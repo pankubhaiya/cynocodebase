@@ -8,7 +8,7 @@ const Home = () => {
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [showForm, setShowForm] = useState(false); // State to control the visibility of the form
+  const [showForm, setShowForm] = useState(false); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,7 +17,7 @@ const Home = () => {
       }
 
       try {
-        const response = await fetch('http://localhost:9090/movie');
+        const response = await fetch('https://relieved-mite-dirndl.cyclic.app/movie');
         const data = await response.json();
 
         setMovies(data);
@@ -35,7 +35,7 @@ const Home = () => {
 
   const handleAddMovie = async (newMovieData) => {
     try {
-      const response = await fetch('http://localhost:9090/movie/', {
+      const response = await fetch('https://relieved-mite-dirndl.cyclic.app/movie/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const Home = () => {
       if (response.ok) {
         const addedMovie = await response.json();
         setMovies((prevMovies) => [...prevMovies, addedMovie]);
-        setShowForm(false); // Close the form after adding the movie
+        setShowForm(false); 
       } else {
         console.error('Failed to add movie');
       }
@@ -57,12 +57,12 @@ const Home = () => {
 
   const handleDelete = async (movieId) => {
     try {
-      const response = await fetch(`http://localhost:9090/movie/${movieId}`, {
+      const response = await fetch(`https://relieved-mite-dirndl.cyclic.app/movie/${movieId}`, {
         method: 'DELETE',
       });
 
       if (response.ok) {
-        // Remove the deleted movie from the state
+       
         setMovies((prevMovies) => prevMovies.filter((movie) => movie._id !== movieId));
       } else {
         console.error('Failed to delete movie');
@@ -73,10 +73,10 @@ const Home = () => {
   };
 
   const handleUpdate = async(movieId,updatedMovieData) => {
-    // Fetch the selected movie details based on movieId
+    
     try {
-      // Make a PUT request to update the movie with the provided data
-      const response = await fetch(`http://localhost:9090/movie/${movieId}`, {
+     
+      const response = await fetch(`https://relieved-mite-dirndl.cyclic.app/movie/${movieId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -85,15 +85,15 @@ const Home = () => {
       });
   
       if (response.ok) {
-        // If the update is successful, get the updated movie data
+      
         const updatedMovie = await response.json();
   
-        // Update the movies state with the new movie data
+        
         setMovies((prevMovies) =>
           prevMovies.map((movie) => (movie._id === movieId ? updatedMovie : movie))
         );
   
-        // Close the form and reset selectedMovie
+       
         setShowForm(false);
         setSelectedMovie(null);
       } else {
@@ -119,7 +119,7 @@ const Home = () => {
       {showForm && (
        <MovieForm
        onAddMovie={handleAddMovie}
-       onUpdateMovie={handleUpdate} // Use the correct prop name
+       onUpdateMovie={handleUpdate} 
        selectedMovie={selectedMovie}
        onCloseForm={() => {
          setShowForm(false);

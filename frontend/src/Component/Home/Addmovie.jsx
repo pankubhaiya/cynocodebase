@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './MovieForm.css'; // Import the CSS file
+import './MovieForm.css'; 
 
 const MovieForm = ({ onAddMovie, onUpdateMovie, selectedMovie, onCloseForm }) => {
     const [formData, setFormData] = useState({
@@ -14,7 +14,7 @@ const MovieForm = ({ onAddMovie, onUpdateMovie, selectedMovie, onCloseForm }) =>
 
 
     useEffect(() => {
-        // If selectedMovie is provided, populate the form with its data
+       
         if (selectedMovie) {
             setFormData(selectedMovie);
         }
@@ -28,14 +28,14 @@ const MovieForm = ({ onAddMovie, onUpdateMovie, selectedMovie, onCloseForm }) =>
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Check if selectedMovie is provided for update, otherwise add a new movie
+    
         if (selectedMovie) {
-            await onUpdateMovie(selectedMovie._id, formData); // Use the correct prop name
+            await onUpdateMovie(selectedMovie._id, formData); 
         } else {
             onAddMovie(formData);
         }
 
-        // Reset the form and close it
+     
         setFormData({
             Title: '',
             Year: '',
