@@ -2,6 +2,7 @@ const express = require("express")
 const {userRouter} = require("./routes/user.router")
 const { connect } = require("./config/connect")
 const cors = require("cors")
+const { movieRouter } = require("./routes/movie.route")
 require("dotenv").config()
 const app = express()
 
@@ -10,6 +11,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 app.use("/user",userRouter)
+app.use("/movie",movieRouter)
 
 app.get("/",(req,res)=>{
      res.send("welcome to home page")
