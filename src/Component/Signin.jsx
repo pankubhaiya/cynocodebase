@@ -86,7 +86,7 @@ function Signin() {
               className="btn btn-lg btn-block btn-primary"
               style={{ backgroundColor: "#fff",color:"black" }}
               type="submit"
-            ><a style={{textDecoration:"none", color:"black"}} href="https://blushing-hospital-gown-foal.cyclic.app//user/auth/google">
+            ><a style={{textDecoration:"none", color:"black"}} href="https://relieved-mite-dirndl.cyclic.app//user/auth/google">
             <FontAwesomeIcon style={{ backgroundColor: "#fff",color:"black",marginRight:"3px" }} icon={faGoogle}> </FontAwesomeIcon> Sign in with google
             </a>
             </button>
